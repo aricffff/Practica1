@@ -1,0 +1,20 @@
+name: Hello World Action
+
+on:
+  push:
+    branches:
+      - main  # Se ejecuta cuando hay un push a la rama 'main'
+  pull_request:
+    branches:
+      - main  # Se ejecuta cuando hay un pull request hacia la rama 'main'
+
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest  # Define el sistema operativo que utilizará la acción
+
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v2  # Se asegura de que el repositorio esté disponible para el siguiente paso
+
+    - name: Print Hello World
+      run:  echo "Hello World"  # Imprime "Hello World" en la consola
